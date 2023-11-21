@@ -105,8 +105,8 @@
 
           <div class="container mt-5">
             <div class="info-wrap">
-              <div class="row">
-                <div class="col-lg-3 col-md-6 info">
+              <div class="row d-flex justify-content-evenly">
+                <div class="col-lg-3 col-md-6 info ms-md-4">
                   <i class="fa fa-map"></i>
                   <h4>Location:</h4>
                   <p>435 S Eagle Rd, <br> Eagle, ID</p>
@@ -118,13 +118,13 @@
                   <p>Monday-Saturday:<br />9:00 AM - 7:00 PM</p>
                 </div>
 
-                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <!-- <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
                   <i class="fa fa-envelope"></i>
                   <h4>Email:</h4>
                   <p>info@example.com<br />contact@example.com</p>
-                </div>
+                </div> -->
 
-                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0 ps-3">
                   <i class="fa fa-phone"></i>
                   <h4>Call:</h4>
                   <p>(208) 939-0748</p>
