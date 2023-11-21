@@ -3,9 +3,12 @@
 @import "./_overrides.scss";
 @import "./_utilities.scss";
 @import "./loaders.scss";
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Foldit:wght@700&family=Playfair+Display&display=swap');
 
 body{
   overscroll-behavior: none;
+  overflow-x: hidden;
+  background-color: $background;
 }
 
 #app {
@@ -17,6 +20,10 @@ body{
 
 main {
   flex-grow: 1;
+}
+
+.nav {
+  color: $banana;
 }
 
 a {
@@ -39,4 +46,717 @@ select {
 form:invalid button[type="submit"] {
   filter: grayscale(1);
   pointer-events: none;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.section-bg {
+  background-color: white;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  margin: 15px 0 0 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #5f5950;
+}
+
+// .section-title h2 span {
+//   color: $darkOrange;
+// }
+
+.section-title p {
+  margin: 15px auto 0 auto;
+  font-weight: 300;
+}
+
+@media (min-width: 1024px) {
+  .section-title p {
+    width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 20px 0;
+  background-color: #f2f1ef;
+  min-height: 40px;
+  margin-top: 120px;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs {
+    margin-top: 70px;
+  }
+}
+
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs h2 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs .d-flex {
+    display: block !important;
+  }
+
+  .breadcrumbs ol {
+    display: block;
+  }
+
+  .breadcrumbs ol li {
+    display: inline-block;
+  }
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about {
+  background: #fffaf3;
+}
+
+.about .content {
+  padding: 0 80px;
+}
+
+.about .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+  color: #5f5950;
+}
+
+.about .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.about .content p {
+  font-size: 15px;
+  color: #848484;
+}
+
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.about .content ul li+li {
+  margin-top: 15px;
+}
+
+.about .content ul li {
+  position: relative;
+  padding-left: 26px;
+}
+
+.about .content ul i {
+  font-size: 20px;
+  color: $darkOrange;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+
+.about .video-box {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 400px;
+  position: relative;
+}
+
+.about .play-btn {
+  width: 94px;
+  height: 94px;
+  background: radial-gradient($darkOrange 50%, rgba(255, 176, 59, 0.4) 52%);
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  left: calc(50% - 47px);
+  top: calc(50% - 47px);
+  overflow: hidden;
+}
+
+.about .play-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 100;
+  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.about .play-btn::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  animation-delay: 0s;
+  animation: pulsate-btn 2s;
+  animation-direction: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: steps;
+  opacity: 1;
+  border-radius: 50%;
+  border: 5px solid rgba(255, 176, 59, 0.7);
+  top: -15%;
+  left: -15%;
+  background: rgba(198, 16, 0, 0);
+}
+
+.about .play-btn:hover::after {
+  border-left: 15px solid $darkOrange;
+  transform: scale(20);
+}
+
+.about .play-btn:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-40%) translateY(-50%);
+  width: 0;
+  height: 0;
+  border: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #fff;
+  z-index: 200;
+  animation: none;
+  border-radius: 0;
+}
+
+@media (max-width: 1024px) {
+
+  .about .content,
+  .about .accordion-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .about .content {
+    padding-top: 30px;
+  }
+
+  .about .accordion-list {
+    padding-bottom: 30px;
+  }
+}
+
+@keyframes pulsate-btn {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Whu Us
+--------------------------------------------------------------*/
+#seasonal {
+  background-color: $background;
+  height: 45rem;
+  // background-image: url('../img/boh1.jpg');
+}
+
+.seasonal .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  height: 100%;
+  background-color: #e9ecef;
+}
+
+.seasonal .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffcf88;
+}
+
+.seasonal .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #6c665c;
+}
+
+.seasonal .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.seasonal .box:hover {
+  background: $darkOrange;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.seasonal .box:hover span,
+.seasonal .box:hover h4,
+.seasonal .box:hover p {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
+# ourStory Section
+--------------------------------------------------------------*/
+#ourStory {
+  background-color: $background;
+}
+
+.ourStory .ourStory-content {
+  margin-top: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ourStory .ourStory-content::after {
+  content: "......................................................................" "...................................................................." "....................................................................";
+  position: absolute;
+  left: 20px;
+  right: 0;
+  top: -4px;
+  z-index: 1;
+  color: #dad8d4;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+#contact {
+  background-color: $background;
+}
+
+.contact .info-wrap {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.contact .info {
+  background: $background;
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: $darkOrange;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #fff6e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #433f39;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #7a7368;
+}
+
+.contact .info:hover i {
+  background: $darkOrange;
+  color: #fff;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  padding: 30px;
+  background: #fff;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: $darkOrange;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #ffa012;
+}
+
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bg-banana {
+  background-color: $banana;
+}
+
+.text-lightOrange {
+  color: $lightOrange;
+}
+
+.text-passion {
+  color: $passion;
+}
+
+.text-acai {
+  color: $acai;
+}
+
+.headerText {
+  // color: black;
+  // text-shadow: 1px 0px 2px $acai;
+  // z-index: 500;
+  // -webkit-text-stroke-width: 1px;
+  // -webkit-text-stroke-color: $spirulina;
+  font-size: 12px;
+}
+
+a.headerText {
+  font-size: 18px;
+}
+
+// .bgText {
+//   position: absolute;
+//   right: 1em;
+//   font-size: 17px;
+// }
+
+.bg-blur{
+  backdrop-filter: blur(25px) saturate(90%);
+}
+
+.bg-MarryOnBowl {
+  background-image: url('../assets/img/MarryOnBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-MarryOnSmoothie {
+  background-image: url('../assets/img/MarryOnSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-LuckyLagoonBowl {
+  background-image: url('../assets/img/LuckyLagoonBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-LuckyLSmoothie {
+  background-image: url('../assets/img/LuckyLSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-AprilBowl {
+  background-image: url('../assets/img/DragonBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-AprilSmoothie {
+  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-MayBowl {
+  background-image: url('../assets/img/LimeSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-LimeSmoothie {
+  background-image: url('../assets/img/LimeSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-SunshineBowl {
+  background-image: url('../assets/img/SunshineBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-SunshineSmoothie {
+  background-image: url('../assets/img/SunshineSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-4thJulyBowl {
+  background-image: url('../assets/img/4thJulyBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-4thofJulySmoothie {
+  background-image: url('../assets/img/4thofJulySmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-DragonBowl {
+  background-image: url('../assets/img/DragonBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-DragonSmoothie {
+  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-SeptemberBowl {
+  background-image: url('../assets/img/AppleFestBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-SeptemberSmoothie {
+  background-image: url('../assets/img/AppleSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-AppleFestBowl {
+  background-image: url('../assets/img/AppleFestBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-AppleSmoothie {
+  background-image: url('../assets/img/AppleSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-PumpkinBowl {
+  background-image: url('../assets/img/PumpkinBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-PumpkinSmoothie {
+  background-image: url('../assets/img/PumpkinSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-CherryPomBowl {
+  background-image: url('../assets/img/CherryPomBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-CherryPomSmoothie {
+  background-image: url('../assets/img/CherryPomSmoothie.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-NorthShoreBowl {
+  background-image: url('../assets/img/NorthShoreBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-TropicalBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-MangoTangoBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-GreensAndThingsBowl {
+  background-image: url('../assets/img/GreensAndThingsBowl.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-PopeyeBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-PBPassionBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-AlohaBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-RedZingerBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-KetoBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-BrentOSaurusBowl {
+  background-image: url('../assets/img');
+  background-size: cover;
+  background-position: center;
+}
+
+.playFair {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Foldit', sans-serif;
+  font-family: 'Playfair Display', serif;
+  text-indent: 50px;
 }

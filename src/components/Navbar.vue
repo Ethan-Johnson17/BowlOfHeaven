@@ -1,35 +1,92 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-    <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-        <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
+  <header id="header" class="isTransparent">
+  
+  <nav class="navbar navbar-expand-lg px-3 pt-0 border-bottom border-black">
+    <div class="collapse navbar-collapse row w-75" id="navbarText">
+        <div class="col-8">
+          <div class="me-4 pb-3 pt-1 ms-3 headerText fw-bolder">
+            <span class="me-5">208-939-0748</span>
+            <span>Monday - Saturday 9 AM to 7 PM</span>
+          </div>
+        <ul class="navbar-nav d-flex justify-content-start">
+          <li>
+            <router-link :to="{ name: 'Home' }" class="btn headerText fw-bolder selectable text-uppercase">
+              Home
+            </router-link>
+          </li>
+          <li>
+            <router-link :to="{ name: 'Menu' }" class="btn headerText fw-bolder selectable text-uppercase">
+              Menu
+            </router-link>
+          </li>
+          <li>
+            <a @click="goToContact('contact')" class="btn headerText fw-bolder selectable text-uppercase">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a class="btn headerText fw-bolder selectable text-uppercase" target="_blank" href="https://www.clover.com/online-ordering/bowl-of-heaven-eagle-eagle">Order Online</a>
+          </li>
+        </ul>
+        </div>
       </div>
-    </router-link>
+    
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
       aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav me-auto">
-        <li>
-          <router-link :to="{ name: 'About' }" class="btn text-success lighten-30 selectable text-uppercase">
-            About
-          </router-link>
-        </li>
-      </ul>
-      <!-- LOGIN COMPONENT HERE -->
-      <Login />
-    </div>
+    
+    
+    <router-link class="navbar-brand d-flex p-0 pb-1" :to="{ name: 'Home' }">
+            <div class="d-flex flex-column align-items-center">
+              <img id="mainLogo" alt="logo" :src="route.fullPath === '/' ? '../src/assets/img/Logo/White/Web/bowl-of-heaven---monocolor-logo-white-rgb.svg' : '../src/assets/img/Logo/Black/Web/bowl-of-heaven---monocolor-logo-black-rgb.svg' " height="65" />
+            </div>
+      </router-link>
   </nav>
+</header>
+  
 </template>
 
 <script>
-import Login from './Login.vue';
+import { useRoute, useRouter } from 'vue-router';
+import { logger } from '../utils/Logger';
 export default {
-  setup() {
-    return {}
+
+  mounted() {
+    // Add a scroll event listener
+    window.addEventListener('scroll', this.handleScroll);
   },
-  components: { Login }
+  beforeUnmount() {
+    // Remove the scroll event listener when the component is destroyed
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  setup() {
+    const route = useRoute( )
+    const router = useRouter( )
+
+    return {
+      isTransparent: true,
+      route,
+      scrollThreshold: false,
+      isHomePage: route.fullPath == '/',
+      handleScroll() {
+        // this.isTransparent = window.scrollY < scrollThreshold;
+        if (window.scrollY > 700 || route.fullPath !== '/') {
+          document.getElementById('mainLogo').setAttribute('src', '../src/assets/img/Logo/Black/Web/bowl-of-heaven---monocolor-logo-black-rgb.svg')
+        } else {
+          document.getElementById('mainLogo').setAttribute('src', '../src/assets/img/Logo/White/Web/bowl-of-heaven---monocolor-logo-white-rgb.svg')
+        }
+      },
+
+      async goToContact(param) {
+        if(!param){return}
+        await router.push({
+          name: "Home",
+        })
+        document.getElementById("contact").scrollIntoView()
+      }
+    }
+  },
 }
 </script>
 
@@ -38,19 +95,50 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-link {
-  text-transform: uppercase;
+
+
+.topper {
+  transform: translateY(-2.25rem) translateX(-64.5rem)
 }
 
-.navbar-nav .router-link-exact-active {
-  border-bottom: 2px solid var(--bs-success);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+
+#header {
+  transition: all 0.5s;
+  padding: 10px 0;
+  /* background: ; */
 }
 
-@media screen and (min-width: 768px) {
-  nav {
-    height: 64px;
-  }
+.isTransparent {
+  background: transparent !important;
 }
+
+#header.header-scrolled {
+  top: 0;
+  /* background: #ECE6BD; */
+}
+
+#header .logo h1 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
 </style>

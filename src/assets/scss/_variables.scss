@@ -1,3 +1,16 @@
+$citron: #D1DD81;
+$spirulina: #3D6C57;
+$passion: #BB90BC;
+$acai: #6D64A6;
+$banana: #ECE6BD;
+$sky: #DAEAE5;
+$bubbleFruit: #E4BDD6;
+$darkOrange: #D66138;
+$lightOrange: #f4cdc8;
+$lightpink: #eebcd7;
+$darkpink: #cb78b0;
+$background: #fffaf3;
+
 $themes: (
   default: (
     "body-bg": #e5e5e5,
@@ -35,6 +48,20 @@ $color-ranges: (
   30: 30,
   35: 35,
   40: 40,
+);
+
+$colors: (
+  "citron": $citron,
+  "spirulina": $spirulina,
+  "passion": $passion,
+  "acai": $acai,
+  "bubbleFruit": $bubbleFruit,
+  "sky": $sky,
+  "banana": $banana,
+  "lightpink": $lightpink,
+  "darkpink": $darkpink,
+  "lightOrange": $lightOrange,
+  "darkOrange": $darkOrange,
 );
 
 $font-sans-serif: Open Sans;
