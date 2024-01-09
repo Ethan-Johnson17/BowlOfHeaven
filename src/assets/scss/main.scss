@@ -3,7 +3,7 @@
 @import "./_overrides.scss";
 @import "./_utilities.scss";
 @import "./loaders.scss";
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Foldit:wght@700&family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@1,900&display=swap');
 
 body{
   overscroll-behavior: none;
@@ -542,7 +542,7 @@ section {
 }
 
 .headerText {
-  // color: black;
+  color: white;
   // text-shadow: 1px 0px 2px $acai;
   // z-index: 500;
   // -webkit-text-stroke-width: 1px;
@@ -761,4 +761,8 @@ a.headerText {
   font-family: 'Foldit', sans-serif;
   font-family: 'Playfair Display', serif;
   text-indent: 50px;
+}
+
+.heroText {
+  font-family: 'Roboto', sans-serif;
 }

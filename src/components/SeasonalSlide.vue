@@ -24,15 +24,15 @@ import { logger } from '../utils/Logger';
 export default {
   setup() {
     let seasonalFlavors = [
-      {monthKey: 0, month: 'January', flavor: 'TBD', bowlImgSrc: '../assets/img/MarryOnBowl.jpg'},
+      {monthKey: 0, month: 'January', flavor: 'TBD', bowlImgSrc: 'https://placehold.co/900x900?text=Coming+Soon', smoothieImgSrc: 'https://placehold.co/900x900?text=Coming+Soon'},
       {monthKey: 1, month: 'February', flavor: 'Marry On/Wanna Date', bowlImgSrc: 'backgroundImage: url(/assets/img/MarryOnBowl.jpg)', smoothieImgSrc: '../assets/img/MarryOnSmoothie.jpg' },
       {monthKey: 2, month: 'March', flavor: 'Lucky Lagoon', bowlImgSrc: '../assets/img/LuckyLagoonBowl.jpg', smoothieImgSrc: '../assets/img/LuckyLSmoothie.jpg' },
-      {monthKey: 3, month: 'April', flavor: 'Bronco Bowl (Carrot Bowl)', bowlImgSrc: '../assets/img/' },
-      {monthKey: 4, month: 'May', flavor: 'Lime-O-Licious', bowlImgSrc: '../assets/img/', smoothieImgSrc: '../assets/img/LimeSmoothie' },
+      {monthKey: 3, month: 'April', flavor: 'Bronco Bowl (Carrot Bowl)', bowlImgSrc: 'https://placehold.co/900x900?text=Coming+Soon', smoothieImgSrc: 'https://placehold.co/900x900?text=Coming+Soon' },
+      {monthKey: 4, month: 'May', flavor: 'Lime-O-Licious', bowlImgSrc: 'https://placehold.co/900x900?text=Coming+Soon', smoothieImgSrc: '../assets/img/LimeSmoothie.jpg' },
       {monthKey: 5, month: 'June', flavor: 'Sunshine', bowlImgSrc: '../assets/img/SunshineBowl.jpg', smoothieImgSrc: '../assets/img/SunshineSmoothie.jpg' },
       {monthKey: 6, month: 'July', flavor: '4th of July', bowlImgSrc: '../assets/img/4thJulyBowl.jpg', smoothieImgSrc: '../assets/img/4thofJulySmoothie.jpg' },
       {monthKey: 7, month: 'August', flavor: 'Dragon', bowlImgSrc: '../assets/img/DragonBowl.jpg',  smoothieImgSrc: '../assets/img/DragonSmoothie.jpg' },
-      {monthKey: 8, month: 'September', flavor: 'Customer Pick', bowlImgSrc: '../assets/img/MarryOnBowl', smoothieImgSrc: '../assets/img/MarryOnBowl' },
+      {monthKey: 8, month: 'September', flavor: 'Customer Pick', bowlImgSrc: '../assets/img/LuckyLagoonBowl.jpg', smoothieImgSrc: '../assets/img/4thofJulySmoothie.jpg' },
       {monthKey: 9, month: 'October', flavor: 'AppleFest', bowlImgSrc: '../assets/img/AppleFestBowl.jpg', smoothieImgSrc: '../assets/img/AppleSmoothie.jpg' },
       {monthKey: 10, month: 'November', flavor: 'Pumpkin', bowlImgSrc: '../assets/img/PumpkinBowl.jpg', smoothieImgSrc: '../assets/img/PumpkinSmoothie.jpg' },
       {monthKey: 11, month: 'December', flavor: 'Cherry Pom Nutty', bowlImgSrc: '../assets/img/CherryPomBowl.jpg', smoothieImgSrc: '../assets/img/CherryPomSmoothie.jpg' }
@@ -196,75 +196,86 @@ export default {
   border-bottom-right-radius: 15px;
 }
 
+.bg-JanuaryBowl {
+  background-image: url('https://placehold.co/900x900?text=Coming+Soon');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-JanuarySmoothie {
+  background-image: url('https://placehold.co/900x900?text=Coming+Soon');
+  background-size: cover;
+  background-position: center;
+}
 
 .bg-FebruaryBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('../assets/img/MarryOnBowl.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-FebruarySmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('../assets/img/MarryOnSmoothie.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-MarchBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('../assets/img/LuckyLagoonBowl.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-MarchSmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('../assets/img/LuckyLSmoothie.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-AprilBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('https://placehold.co/900x900?text=Coming+Soon');
   background-size: cover;
   background-position: center;
 }
 
 .bg-AprilSmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('https://placehold.co/900x900?text=Coming+Soon');
   background-size: cover;
   background-position: center;
 }
 
 .bg-MayBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('https://placehold.co/900x900?text=Coming+Soon');
   background-size: cover;
   background-position: center;
 }
 
 .bg-MaySmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('../assets/img/LimeSmoothie.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-JuneBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('../assets/img/SunshineBowl.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-JuneSmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('../assets/img/SunshineSmoothie.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-JulyBowl {
-  background-image: url('../assets/img/DragonBowl.jpg');
+  background-image: url('../assets/img/4thJulyBowl.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-JulySmoothie {
-  background-image: url('../assets/img/DragonSmoothie.jpg');
+  background-image: url('../assets/img/4thofJulySmoothie.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -282,13 +293,13 @@ export default {
 }
 
 .bg-SeptemberBowl {
-  background-image: url('../assets/img/AppleFestBowl.jpg');
+  background-image: url('../assets/img/PeanutButterPassionBowl.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .bg-SeptemberSmoothie {
-  background-image: url('../assets/img/AppleSmoothie.jpg');
+  background-image: url('../assets/img/PeanutButterSmoothie.jpg');
   background-size: cover;
   background-position: center;
 }

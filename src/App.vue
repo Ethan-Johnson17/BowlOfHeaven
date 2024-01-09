@@ -8,8 +8,8 @@
    <footer id="footer">
       <div class="container-fluid text-dark border-top border-black pt-3">
         <h3>Bowl of Heaven</h3>
-        <p class="fw-bold text-danger">
-          ---------------------- BOH Mission ----------------------------
+        <p class="fw-bold text-dark">
+           Let food be thy medicine
         </p>
         <div class="social-links">
           <!-- <a href="#" class="twitter"><i class="mdi mdi-twitter"></i></a> -->

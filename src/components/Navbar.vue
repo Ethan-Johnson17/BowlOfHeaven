@@ -1,7 +1,7 @@
 <template>
-  <header id="header" class="isTransparent">
+  <header id="header" class="isTransparent border-bottom border-black">
   
-  <nav class="navbar navbar-expand-lg px-3 pt-0 border-bottom border-black">
+  <nav class="navbar navbar-expand-lg px-3 pt-0">
     <div class="collapse navbar-collapse row w-75" id="navbarText">
         <div class="col-8">
           <div class="me-4 pb-3 pt-1 ms-3 headerText fw-bolder">
@@ -71,10 +71,20 @@ export default {
       isHomePage: route.fullPath == '/',
       handleScroll() {
         // this.isTransparent = window.scrollY < scrollThreshold;
-        if (window.scrollY > 700 || route.fullPath !== '/') {
+        let elements = document.getElementsByClassName('headerText');
+        let navbar = document.getElementById('header')
+        if (window.scrollY > 300 || route.fullPath !== '/') {
           document.getElementById('mainLogo').setAttribute('src', '../src/assets/img/Logo/Black/Web/bowl-of-heaven---monocolor-logo-black-rgb.svg')
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.color = 'black';
+          }
+          navbar.style.backgroundColor = '#fffaf3'
         } else {
           document.getElementById('mainLogo').setAttribute('src', '../src/assets/img/Logo/White/Web/bowl-of-heaven---monocolor-logo-white-rgb.svg')
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].style.color = 'white';
+          }
+          navbar.style.backgroundColor = 'transparent'
         }
       },
 
@@ -109,11 +119,10 @@ a:hover {
 #header {
   transition: all 0.5s;
   padding: 10px 0;
-  /* background: ; */
 }
 
 .isTransparent {
-  background: transparent !important;
+  background-color: transparent;
 }
 
 #header.header-scrolled {

@@ -3,10 +3,12 @@
     
 
     <main id="main">
-      <section id="hero">
+      <section id="hero" class="border-bottom border-black">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-12"></div>
+            <div class="col-4 mt-5 d-flex fs-1">
+              <!-- <p class="fw-bolder heroText">Let Food Be Thy Medicine</p> -->
+            </div>
           </div>
         </div>
       </section>
@@ -59,7 +61,7 @@
         <!-- End Seasonal Section -->
 
         <!-- ======= Menu Section ======= -->
-        <section id="ourStory" class="ourStory">
+        <section id="ourStory" class="ourStory border-bottom border-black">
           <div class="container-fluid">
             <div class="section-title">
               <h2 class="text-dark">Our <span>Story</span></h2>
@@ -72,10 +74,20 @@
             </div>
 
             <div class="row ourStory-container">
-              <h2 class="ms-5 text-dark"><i>Then...</i></h2>
-              <p class="col-8 ps-4 fs-5 playFair">Shortly after learning of Brent's diagnosis with Parkinson's disease, Gigi & Brent both knew it was time to make some life changes. Both experienced business people, they took that knowledge and combined it with what they had learned about longevity and living a fuller life. They had realized a very important factor; what you eat really does matter. They went after the facts, and turned to nutrition with scientific evidence to built a menu that would in turn serve the community they loved. Bowl of Heaven offers a plant-based approach with fresh fruits and vegetables, berries with antioxidant properties. In 2010, Bowl of Heaven was born. Together, they established the very first OG acai bowls in the treasure valley; pioneering recipes that have been tried and true, paid with their own blood, sweat and tears. Today, Brent is a walking miracle. He has been diagnosed with Parkinsons for over 25 years, and continues to move with a smile on his face. Gigi and Brent are now enjoying as much time as they possibly can together.</p>
-              <h2 class="ms-5 text-dark"><i>Now...</i></h2>
-              <p class="col-8 fs-5 playFair">The Legacy Continues: <br> Gigi and Brent decided to step away from the day-to-day life that Bowl of Heaven offers, and sold it to Gigi's nephew and his wife, Christopher & Felicia Fernandez. Both as loving and caring, with a deep desire to encompass nutrition and serve the community they grew up in. Together, they have five children and find every day a new adventure.</p>
+              <div class="col-md-7 pt-4">
+                <h2 class="ms-5 mb-4 text-dark"><i>Then...</i></h2>
+                <p class="ps-4 fs-5 playFair">Shortly after learning of Brent's diagnosis with Parkinson's disease, Gigi & Brent both knew it was time to make some life changes. Both experienced business people, they took that knowledge and combined it with what they had learned about longevity and living a fuller life. They had realized a very important factor; what you eat really does matter. They went after the facts, and turned to nutrition with scientific evidence to built a menu that would in turn serve the community they loved. Bowl of Heaven offers a plant-based approach with fresh fruits and vegetables, berries with antioxidant properties. In 2010, Bowl of Heaven was born. Together, they established the very first OG acai bowls in the treasure valley; pioneering recipes that have been tried and true, paid with their own blood, sweat and tears. Today, Brent is a walking miracle. He has been diagnosed with Parkinsons for over 25 years, and continues to move with a smile on his face. Gigi and Brent are now enjoying as much time as they possibly can together.</p>
+              </div>
+              <div class="col-md-5">
+                <img class="rounded" src="../assets/img/gigiBrent.jpeg" alt="Gigi and Brent">
+              </div>
+              <div class="col-md-4 ps-5 mt-5">
+                <img class="rounded famPic" src="../assets/img/fernandezFam.jpg" alt="Fernandez Family">
+              </div>
+              <div class="col-md-7 pt-4 mt-5">
+                <h2 class="ms-3 mb-4 text-dark"><i>Now...</i></h2>
+                <p class="fs-5 pe-4 playFair">The Legacy Continues: Gigi and Brent decided to step away from the day-to-day life that Bowl of Heaven offers, and sold it to Gigi's nephew and his wife, Christopher & Felicia Fernandez. Both as loving and caring, with a deep desire to encompass nutrition and serve the community they grew up in. Together, they have five children and find every day a new adventure.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -87,10 +99,9 @@
           <div class="container">
             <div class="section-title">
               <h2 class="text-dark"><span>Contact</span> Us</h2>
-              <p>
-                Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-                adipisci expedita at voluptas atque vitae autem.
-              </p>
+              <h6 class="mt-2">
+                We'd love to hear from you! Give us a call or come see us!
+              </h6>
             </div>
           </div>
 
@@ -207,10 +218,19 @@ export default {
 
 <style scoped lang="scss">
 #hero {
-  background-image: url('../assets/img/oneBowlSideshotLandscape.jpg');
+  background-image: url('../assets/img/pbPassionCreative.jpg');
   background-size: cover;
+  background-position: center;
   min-height: 85vh;
   position: relative;
   margin-top: -6.7em;
+}
+
+.heroText {
+  font-size: 120px;
+}
+
+.famPic {
+  height: 600px;
 }
 </style>
